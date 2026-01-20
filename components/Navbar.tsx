@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, memo } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navItems = [
@@ -13,16 +13,31 @@ const navItems = [
   { name: 'Contact', href: '#contact' },
 ]
 
-export default function Navbar() {
+const Navbar = memo(function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen((prev) => !prev)
+  }, [])
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false)
   }, [])
 
   return (
@@ -59,8 +74,9 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={toggleMobileMenu}
               className="text-gray-300 hover:text-primary-400 focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -80,7 +96,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="text-gray-300 hover:text-primary-400 block px-3 py-2 rounded-md text-base font-medium"
               >
                 {item.name}
@@ -91,4 +107,6 @@ export default function Navbar() {
       )}
     </nav>
   )
-}
+})
+
+export default Navbar
