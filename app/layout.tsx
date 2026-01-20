@@ -4,6 +4,8 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import StarField from '@/components/StarField'
+import SolarSystem from '@/components/SolarSystem'
+import SpaceShuttle from '@/components/SpaceShuttle'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StarField />
+        <SolarSystem />
+        <SpaceShuttle />
         <Navbar />
         {children}
         <Footer />
