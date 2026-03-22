@@ -8,6 +8,7 @@ const SpaceShuttle = memo(function SpaceShuttle() {
   const positionRef = useRef({ x: -200, y: 0 })
   const thrusterFrameRef = useRef(0)
   const resizeTimeoutRef = useRef<NodeJS.Timeout>()
+  const fuselageGradientRef = useRef<CanvasGradient | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -167,13 +168,16 @@ const SpaceShuttle = memo(function SpaceShuttle() {
   ) => {
     ctx.save()
 
-    // Main fuselage
-    const fuselageGradient = ctx.createLinearGradient(x, y, x, y + size * 0.7)
-    fuselageGradient.addColorStop(0, '#FFFFFF')
-    fuselageGradient.addColorStop(0.5, '#E8E8E8')
-    fuselageGradient.addColorStop(1, '#B8B8B8')
+    // Main fuselage — gradient is always at (0,0) in local space, so cache it
+    if (!fuselageGradientRef.current) {
+      const g = ctx.createLinearGradient(x, y, x, y + size * 0.7)
+      g.addColorStop(0, '#FFFFFF')
+      g.addColorStop(0.5, '#E8E8E8')
+      g.addColorStop(1, '#B8B8B8')
+      fuselageGradientRef.current = g
+    }
 
-    ctx.fillStyle = fuselageGradient
+    ctx.fillStyle = fuselageGradientRef.current
     ctx.beginPath()
     const bodyWidth = size * 0.28
     const bodyStartY = y + size * 0.12

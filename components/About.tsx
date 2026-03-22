@@ -67,9 +67,9 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-primary-50 p-6 rounded-lg">
-              <Target className="h-8 w-8 text-primary-600 mb-3" />
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+            <div className="bg-space-800/50 backdrop-blur-sm border border-primary-500/20 p-6 rounded-lg hover:border-primary-400/40 transition-colors">
+              <Target className="h-8 w-8 text-primary-400 mb-3" />
+              <h4 className="text-xl font-semibold text-white mb-2">
                 Core Values
               </h4>
               <p className="text-gray-300">
@@ -78,9 +78,9 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-primary-50 p-6 rounded-lg">
-              <Award className="h-8 w-8 text-primary-600 mb-3" />
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+            <div className="bg-space-800/50 backdrop-blur-sm border border-primary-500/20 p-6 rounded-lg hover:border-primary-400/40 transition-colors">
+              <Award className="h-8 w-8 text-primary-400 mb-3" />
+              <h4 className="text-xl font-semibold text-white mb-2">
                 Key Achievements
               </h4>
               <p className="text-gray-300">
