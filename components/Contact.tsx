@@ -45,13 +45,10 @@ export default function Contact() {
                 <Mail className="h-5 w-5 mr-3 text-primary-400" />
                 <span>ajaysinghj8@hotmail.com</span>
               </a>
-              <a
-                href="tel:+918288818190"
-                className="flex items-center text-gray-300 hover:text-primary-400 transition-colors"
-              >
+              <div className="flex items-center text-gray-300">
                 <Phone className="h-5 w-5 mr-3 text-primary-400" />
-                <span>+91 8288818190</span>
-              </a>
+                <span>+91 xxxxxx8190</span>
+              </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="h-5 w-5 mr-3 text-primary-400" />
                 <span>Gurugram, India</span>
