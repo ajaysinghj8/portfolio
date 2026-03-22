@@ -13,6 +13,7 @@ interface Star {
 
 const StarField = memo(function StarField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const animationFrameRef = useRef<number>()
   const resizeTimeoutRef = useRef<NodeJS.Timeout>()
 
   useEffect(() => {
@@ -90,7 +91,7 @@ const StarField = memo(function StarField() {
       })
 
       frameCount++
-      requestAnimationFrame(animate)
+      animationFrameRef.current = requestAnimationFrame(animate)
     }
 
     animate()
@@ -98,6 +99,9 @@ const StarField = memo(function StarField() {
     return () => {
       clearTimeout(resizeTimeoutRef.current)
       window.removeEventListener('resize', handleResize)
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+      }
     }
   }, [])
 

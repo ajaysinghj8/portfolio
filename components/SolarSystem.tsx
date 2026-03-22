@@ -25,11 +25,18 @@ const SolarSystem = memo(function SolarSystem() {
     const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true })
     if (!ctx) return
 
+    // Cached sun gradients (invalidated on resize)
+    let cachedSunGradient: CanvasGradient | null = null
+    let cachedSunCoreGradient: CanvasGradient | null = null
+
     // Set canvas size with debounce
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
       centerRef.current = { x: canvas.width / 2, y: canvas.height / 2 }
+      // Invalidate gradient cache on resize since center changes
+      cachedSunGradient = null
+      cachedSunCoreGradient = null
     }
     resizeCanvas()
     
@@ -95,28 +102,8 @@ const SolarSystem = memo(function SolarSystem() {
       },
     ]
 
-    // Pre-create gradients
-    let frameCount = 0
-    const createSunGradients = (centerX: number, centerY: number) => {
-      const sunGradient = ctx.createRadialGradient(
-        centerX, centerY, 0,
-        centerX, centerY, sunGlowRadius
-      )
-      sunGradient.addColorStop(0, 'rgba(255, 200, 50, 0.8)')
-      sunGradient.addColorStop(0.5, 'rgba(255, 150, 0, 0.4)')
-      sunGradient.addColorStop(1, 'rgba(255, 100, 0, 0)')
-
-      const sunCoreGradient = ctx.createRadialGradient(
-        centerX, centerY, 0,
-        centerX, centerY, sunRadius
-      )
-      sunCoreGradient.addColorStop(0, '#FFE5B4')
-      sunCoreGradient.addColorStop(1, '#FFA500')
-
-      return { sunGradient, sunCoreGradient }
-    }
-
     // Animation loop
+    let frameCount = 0
     const animate = () => {
       const { x: centerX, y: centerY } = centerRef.current
 
@@ -135,15 +122,25 @@ const SolarSystem = memo(function SolarSystem() {
         })
       }
 
-      // Draw sun with cached gradients
-      const sunGradients = createSunGradients(centerX, centerY)
+      // Create sun gradients once, reuse until resize invalidates them
+      if (!cachedSunGradient) {
+        cachedSunGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, sunGlowRadius)
+        cachedSunGradient.addColorStop(0, 'rgba(255, 200, 50, 0.8)')
+        cachedSunGradient.addColorStop(0.5, 'rgba(255, 150, 0, 0.4)')
+        cachedSunGradient.addColorStop(1, 'rgba(255, 100, 0, 0)')
+      }
+      if (!cachedSunCoreGradient) {
+        cachedSunCoreGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, sunRadius)
+        cachedSunCoreGradient.addColorStop(0, '#FFE5B4')
+        cachedSunCoreGradient.addColorStop(1, '#FFA500')
+      }
       
-      ctx.fillStyle = sunGradients.sunGradient
+      ctx.fillStyle = cachedSunGradient
       ctx.beginPath()
       ctx.arc(centerX, centerY, sunGlowRadius, 0, Math.PI * 2)
       ctx.fill()
 
-      ctx.fillStyle = sunGradients.sunCoreGradient
+      ctx.fillStyle = cachedSunCoreGradient
       ctx.beginPath()
       ctx.arc(centerX, centerY, sunRadius, 0, Math.PI * 2)
       ctx.fill()
