@@ -9,33 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+        cream: {
+          50:  '#fdfaf5',
+          100: '#f8f2e6',
+          200: '#f2e9d8',
+          300: '#e8ddc8',
+          400: '#d9ccb4',
+          500: '#c4b49a',
         },
-        space: {
-          50: '#f0f4ff',
-          100: '#e0e9ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#1e1b4b',
-          900: '#0f0e2e',
+        ink: {
+          DEFAULT: '#1c1917',
+          muted:   '#78716c',
+          faint:   '#a8a29e',
         },
       },
-      backgroundImage: {
-        'star-gradient': 'radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a1a 100%)',
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['DM Mono', 'ui-monospace', 'monospace'],
       },
     },
   },
