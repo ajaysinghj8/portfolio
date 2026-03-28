@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 10, 26;
-  --background-end-rgb: 26, 26, 46;
+  --foreground: #1c1917;
+  --background: #f5f0e8;
+  --muted: #78716c;
+  --border: #e0d9ce;
 }
 
 * {
@@ -19,13 +20,15 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: radial-gradient(
-      ellipse at center,
-      rgb(26, 26, 46) 0%,
-      rgb(10, 10, 26) 100%
-    );
+  color: var(--foreground);
+  background-color: var(--background);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
 }
 
 @layer utilities {

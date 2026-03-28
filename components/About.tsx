@@ -1,97 +1,60 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { User, Target, Award } from 'lucide-react'
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="py-20 bg-space-900/50 backdrop-blur-sm"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about">
+      <div className="w-full px-6 lg:px-12 py-14">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.4 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto"></div>
+          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-6">
+            About
+          </p>
+
+          <p className="text-[15px] text-[#1c1917] leading-relaxed mb-4">
+            When I joined BharatPe, the entire platform ran on a <span className="font-medium">PHP monolith backed by MySQL</span>. I led the
+            migration to a microservices architecture — incrementally, without a single breaking change
+            or moment of downtime. On the merchant side, I built the{' '}
+            <span className="font-medium">Merchant App Backend</span>, <span className="font-medium">Organised Trade Dashboard</span>,{' '}
+            and <span className="font-medium">Logistics Service</span>. For customer operations, I designed the{' '}
+            <span className="font-medium">Modular CRM</span>, <span className="font-medium">Agent App &amp; Dashboard</span>,{' '}
+            <span className="font-medium">IVR Platform</span>, and <span className="font-medium">Freshdesk Integration</span>.{' '}
+            On the risk and intelligence side, I shipped a <span className="font-medium">Lending Risk Engine</span> and an{' '}
+            <span className="font-medium">AI-powered Chatbot</span>.
+          </p>
+          <p className="text-[15px] text-[#1c1917] leading-relaxed mb-4">
+            To drive growth and retention, I architected a <span className="font-medium">Campaign &amp; Rewards System</span> that
+            reduced merchant churn through personalised, data-driven outreach, and a{' '}
+            <span className="font-medium">Recharge &amp; Earn Service</span> that enabled DTH and mobile recharges with
+            commission on every transaction — adding a new revenue stream directly within the app.
+          </p>
+          <p className="text-[15px] text-[#1c1917] leading-relaxed mb-10">
+            The work translated into real numbers: <span className="font-medium">₹5 Cr/month saved</span> in messaging costs,{' '}
+            <span className="font-medium">₹6 Cr in gold investments</span> facilitated, and{' '}
+            <span className="font-medium">UPI AutoPay</span> enabled at scale. Recognised for this impact with the{' '}
+            <span className="font-medium">Technical Guru</span>, <span className="font-medium">A-Team</span> (twice), and{' '}
+            <span className="font-medium">Customer Success IVR</span> awards at BharatPe.
+          </p>
+
+          <div className="grid grid-cols-2 gap-x-12 gap-y-6 text-sm">
+            <div>
+              <p className="text-xs tracking-widest uppercase text-[#78716c] mb-2">Location</p>
+              <p className="text-[#1c1917]">Gurugram, India</p>
+            </div>
+            <div>
+              <p className="text-xs tracking-widest uppercase text-[#78716c] mb-2">Core Values</p>
+              <p className="text-[#1c1917]">Ownership · Innovation · Execution · Quality</p>
+            </div>
+          </div>
         </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3 className="text-2xl font-semibold text-white mb-4">
-              Professional Summary
-            </h3>
-            <p className="text-gray-300 mb-4 leading-relaxed">
-              Seasoned Engineering Manager with 11+ years of experience leading large teams, 
-              architecting systems, and enabling strong execution rhythms. Recognized at 
-              BharatPe for driving innovation, simplifying processes, and consistently 
-              delivering high-quality products at scale.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              Strong communicator with a commitment to coaching teams, improving engineering 
-              practices, and aligning technology with organizational goals. Passionate about 
-              building scalable, cost-efficient systems and fostering a culture of continuous 
-              improvement, ownership, and engineering excellence.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 gap-6"
-          >
-            <div className="bg-space-800/50 backdrop-blur-sm border border-primary-500/20 p-6 rounded-lg hover:border-primary-400/40 transition-colors">
-              <User className="h-8 w-8 text-primary-400 mb-3" />
-              <h4 className="text-xl font-semibold text-white mb-2">
-                Leadership Philosophy
-              </h4>
-              <p className="text-gray-300">
-                Focus on coaching teams, improving engineering practices, and ensuring 
-                strong alignment with organizational goals. Foster ownership, continuous 
-                improvement, and engineering excellence through mentorship and clear 
-                communication.
-              </p>
-            </div>
-
-            <div className="bg-space-800/50 backdrop-blur-sm border border-primary-500/20 p-6 rounded-lg hover:border-primary-400/40 transition-colors">
-              <Target className="h-8 w-8 text-primary-400 mb-3" />
-              <h4 className="text-xl font-semibold text-white mb-2">
-                Core Values
-              </h4>
-              <p className="text-gray-300">
-                Innovation, Process Simplification, Quality Delivery, Team Building, 
-                Technical Excellence, and Strong Execution Discipline
-              </p>
-            </div>
-
-            <div className="bg-space-800/50 backdrop-blur-sm border border-primary-500/20 p-6 rounded-lg hover:border-primary-400/40 transition-colors">
-              <Award className="h-8 w-8 text-primary-400 mb-3" />
-              <h4 className="text-xl font-semibold text-white mb-2">
-                Key Achievements
-              </h4>
-              <p className="text-gray-300">
-                Multiple awards including Technical Guru, A-Team Award, and Customer Success 
-                IVR Chatbot Award. Achieved major business impact: reduced WhatsApp cost by 
-                5 Cr/month, facilitated 6 Cr in gold investments, and enabled UPI AutoPay.
-              </p>
-            </div>
-          </motion.div>
-        </div>
       </div>
+
+      <hr />
     </section>
   )
 }
