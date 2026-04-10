@@ -39,7 +39,7 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-8">
+          <p className="text-xs tracking-widest uppercase text-[#44403c] mb-8">
             Skills
           </p>
 
@@ -53,7 +53,7 @@ export default function Skills() {
                 transition={{ duration: 0.4, delay: index * 0.04 }}
                 className="flex gap-6"
               >
-                <p className="text-xs tracking-wide text-[#a8a29e] w-24 flex-shrink-0 pt-0.5">
+                <p className="text-xs tracking-wide text-[#6b6460] w-24 flex-shrink-0 pt-0.5">
                   {cat.category}
                 </p>
                 <p className="text-sm text-[#1c1917] leading-relaxed">

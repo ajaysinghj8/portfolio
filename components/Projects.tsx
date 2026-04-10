@@ -51,7 +51,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-8">
+          <p className="text-xs tracking-widest uppercase text-[#44403c] mb-8">
             Projects
           </p>
 
@@ -66,10 +66,10 @@ export default function Projects() {
               >
                 <div className="flex items-baseline justify-between mb-2">
                   <h3 className="text-[15px] font-medium text-[#1c1917]">{project.title}</h3>
-                  <span className="text-xs text-[#a8a29e] ml-4 flex-shrink-0">{project.period}</span>
+                  <span className="text-xs text-[#6b6460] ml-4 flex-shrink-0">{project.period}</span>
                 </div>
-                <p className="text-sm text-[#78716c] leading-relaxed mb-3">{project.description}</p>
-                <p className="text-xs text-[#a8a29e]">{project.tags.join(' · ')}</p>
+                <p className="text-sm text-[#44403c] leading-relaxed mb-3">{project.description}</p>
+                <p className="text-xs text-[#6b6460]">{project.tags.join(' · ')}</p>
               </motion.div>
             ))}
           </div>

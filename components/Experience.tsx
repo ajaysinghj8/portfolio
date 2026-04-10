@@ -67,7 +67,7 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-8">
+          <p className="text-xs tracking-widest uppercase text-[#44403c] mb-8">
             Experience
           </p>
 
@@ -82,12 +82,12 @@ export default function Experience() {
               >
                 <div className="flex items-baseline justify-between mb-1">
                   <h3 className="text-[15px] font-medium text-[#1c1917]">{exp.company}</h3>
-                  <span className="text-xs text-[#a8a29e] tabular-nums">{exp.period}</span>
+                  <span className="text-xs text-[#6b6460] tabular-nums">{exp.period}</span>
                 </div>
-                <p className="text-sm text-[#78716c] mb-3">{exp.title} · {exp.location}</p>
+                <p className="text-sm text-[#44403c] mb-3">{exp.title} · {exp.location}</p>
                 <ul className="space-y-1.5">
                   {exp.description.map((item, idx) => (
-                    <li key={idx} className="text-sm text-[#78716c] leading-relaxed pl-3 border-l border-[#e0d9ce]">
+                    <li key={idx} className="text-sm text-[#44403c] leading-relaxed pl-3 border-l border-[#d9d2c8]">
                       {item}
                     </li>
                   ))}

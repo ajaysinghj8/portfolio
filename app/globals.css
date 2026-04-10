@@ -4,9 +4,9 @@
 
 :root {
   --foreground: #1c1917;
-  --background: #f5f0e8;
-  --muted: #78716c;
-  --border: #e0d9ce;
+  --background: #f8f5f0;
+  --muted: #44403c;
+  --border: #d9d2c8;
 }
 
 * {

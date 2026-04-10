@@ -55,7 +55,7 @@ export default function OpenSource() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-8">
+          <p className="text-xs tracking-widest uppercase text-[#44403c] mb-8">
             Open Source
           </p>
 
@@ -74,7 +74,7 @@ export default function OpenSource() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[15px] font-medium text-[#1c1917] hover:text-[#78716c] transition-colors"
+                      className="text-[15px] font-medium text-[#1c1917] hover:text-[#44403c] transition-colors"
                     >
                       {project.name}
                     </a>
@@ -83,19 +83,19 @@ export default function OpenSource() {
                         href={project.npm}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[10px] tracking-wide uppercase text-[#a8a29e] border border-[#e0d9ce] px-1.5 py-0.5 hover:text-[#78716c] hover:border-[#78716c] transition-colors"
+                        className="text-[10px] tracking-wide uppercase text-[#6b6460] border border-[#d9d2c8] px-1.5 py-0.5 hover:text-[#44403c] hover:border-[#44403c] transition-colors"
                       >
                         npm
                       </a>
                     )}
                   </div>
                   <div className="flex items-center gap-3 ml-4 flex-shrink-0">
-                    <span className="text-xs text-[#a8a29e]">★ {project.stars}</span>
-                    <span className="text-xs text-[#a8a29e]">⑂ {project.forks}</span>
+                    <span className="text-xs text-[#6b6460]">★ {project.stars}</span>
+                    <span className="text-xs text-[#6b6460]">⑂ {project.forks}</span>
                   </div>
                 </div>
-                <p className="text-sm text-[#78716c] leading-relaxed mb-3">{project.description}</p>
-                <p className="text-xs text-[#a8a29e]">{project.tags.join(' · ')}</p>
+                <p className="text-sm text-[#44403c] leading-relaxed mb-3">{project.description}</p>
+                <p className="text-xs text-[#6b6460]">{project.tags.join(' · ')}</p>
               </motion.div>
             ))}
           </div>
@@ -105,7 +105,7 @@ export default function OpenSource() {
               href="https://github.com/ajaysinghj8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[#78716c] hover:text-[#1c1917] transition-colors"
+              className="text-xs text-[#44403c] hover:text-[#1c1917] transition-colors"
             >
               View all on GitHub →
             </a>
