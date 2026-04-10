@@ -5,8 +5,8 @@ export default function Footer() {
     <footer>
       <div className="w-full px-6 lg:px-12 py-8">
         <div className="flex justify-between items-center">
-          <p className="text-xs text-[#a8a29e]">© {currentYear} Ajay Panwar</p>
-          <p className="text-xs text-[#a8a29e]">Gurugram, India</p>
+          <p className="text-xs text-[#6b6460]">© {currentYear} Ajay Panwar</p>
+          <p className="text-xs text-[#6b6460]">Gurugram, India</p>
         </div>
       </div>
     </footer>

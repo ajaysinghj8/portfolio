@@ -12,7 +12,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-6">
+          <p className="text-xs tracking-widest uppercase text-[#44403c] mb-6">
             About
           </p>
 
@@ -43,11 +43,11 @@ export default function About() {
 
           <div className="grid grid-cols-2 gap-x-12 gap-y-6 text-sm">
             <div>
-              <p className="text-xs tracking-widest uppercase text-[#78716c] mb-2">Location</p>
+              <p className="text-xs tracking-widest uppercase text-[#44403c] mb-2">Location</p>
               <p className="text-[#1c1917]">Gurugram, India</p>
             </div>
             <div>
-              <p className="text-xs tracking-widest uppercase text-[#78716c] mb-2">Core Values</p>
+              <p className="text-xs tracking-widest uppercase text-[#44403c] mb-2">Core Values</p>
               <p className="text-[#1c1917]">Ownership · Innovation · Execution · Quality</p>
             </div>
           </div>

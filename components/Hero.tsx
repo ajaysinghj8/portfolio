@@ -28,7 +28,7 @@ export default function Hero() {
 
           {/* Text */}
           <div className="w-full md:w-[50rem] text-center">
-            <p className="text-sm tracking-widest uppercase text-[#78716c] mb-4">
+            <p className="text-sm tracking-widest uppercase text-[#44403c] mb-4">
               Available for opportunities
             </p>
 
@@ -36,7 +36,7 @@ export default function Hero() {
               Engineering Manager
             </h1>
 
-            <p className="text-[30px] text-[#78716c] leading-relaxed mb-6">
+            <p className="text-[30px] text-[#44403c] leading-relaxed mb-6">
               Seasoned Engineering Manager with 11+ years of experience leading large teams,
               architecting systems, and enabling strong execution rhythms at scale.
             </p>

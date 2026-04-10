@@ -21,7 +21,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <p className="text-xs tracking-widest uppercase text-[#78716c] mb-6">
+          <p className="text-xs tracking-widest uppercase text-[#44403c] mb-6">
             Contact
           </p>
 
@@ -32,16 +32,16 @@ export default function Contact() {
           <div className="flex flex-col items-center md:flex-row md:justify-center gap-4 md:gap-8">
             <button
               onClick={copyEmail}
-              className="text-sm text-[#1c1917] underline underline-offset-4 decoration-[#e0d9ce] hover:decoration-[#78716c] transition-all"
+              className="text-sm text-[#1c1917] underline underline-offset-4 decoration-[#d9d2c8] hover:decoration-[#44403c] transition-all"
             >
               {copied ? 'copied!' : 'ajaysinghj8@hotmail.com'}
             </button>
-            <p className="text-sm text-[#78716c]">Gurugram, India</p>
+            <p className="text-sm text-[#44403c]">Gurugram, India</p>
             <a
               href="https://linkedin.com/in/ajaysinghj8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[#78716c] hover:text-[#1c1917] transition-colors"
+              className="text-sm text-[#44403c] hover:text-[#1c1917] transition-colors"
             >
               LinkedIn ↗
             </a>
@@ -49,7 +49,7 @@ export default function Contact() {
               href="https://github.com/ajaysinghj8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[#78716c] hover:text-[#1c1917] transition-colors"
+              className="text-sm text-[#44403c] hover:text-[#1c1917] transition-colors"
             >
               GitHub ↗
             </a>

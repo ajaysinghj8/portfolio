@@ -19,8 +19,8 @@ const config: Config = {
         },
         ink: {
           DEFAULT: '#1c1917',
-          muted:   '#78716c',
-          faint:   '#a8a29e',
+          muted:   '#44403c',
+          faint:   '#6b6460',
         },
       },
       fontFamily: {
