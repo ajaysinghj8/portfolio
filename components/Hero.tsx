@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const PHOTO_URL =
-  'https://media.licdn.com/dms/image/v2/D5603AQE0FdQcnXqbzQ/profile-displayphoto-crop_800_800/B56Zg8R2opH0AU-/0/1753357971631?e=1776297600&v=beta&t=tTDQnjAnHNZ4IvhjrelBaJHWoE_ZPBfomyQtXis3Ybs'
+const PHOTO_URL = '/profile.jpg'
 
 export default function Hero() {
   return (
